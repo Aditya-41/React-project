@@ -22,6 +22,7 @@
 
 ### Setup Instruction for Tailwind 
 [TailWind Official Instruction Doc]
+
 (https://tailwindcss.com/docs/installation)
 
 1. Instal TailWind CSS
@@ -55,4 +56,27 @@
         axios
         react-hot-toast 
         @tailwindcss/line-clamp
+```
+
+### Configure auto Import Sort esline
+
+1. Install Simple Import Sort
+``` 
+    npm i -D eslint-plugin-simple-import-sort
+```
+2. Add rule in `.eslint.cjs`
+```
+    `simple-import-sort/imports`: 'error
+```
+3. Add simple-import sort plugin in `.eslint.cjs`
+```
+    plugins: [..., 'simple-import-sort']
+```
+4. To enable auto import sort on file save in Vs-Code
+    - Open `setting-json`
+    - add the following config
+```
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "always"
+    }
 ```
