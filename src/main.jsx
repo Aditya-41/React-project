@@ -4,14 +4,17 @@ import './index.css';
 
 
 import { createRoot } from 'react-dom/client';
-
+import { Provider } from "react-redux";
 import { BrowserRouter } from 'react-router-dom';
 
 createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
+  <Provider>
+    <BrowserRouter>
      <App />
      <Toaster/>
-  </BrowserRouter>
+    </BrowserRouter>
+  </Provider>
+  
   
   
 );

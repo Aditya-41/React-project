@@ -33,7 +33,6 @@ export default [
       ...react.configs['jsx-runtime'].rules,
       ...reactHooks.configs.recommended.rules,
       "simple-import-sort/imports": "error",
-      "simple-import-sort/exports": "error",
       'react/jsx-no-target-blank': 'off',
       'react-refresh/only-export-components': [
         'warn',
