@@ -44,6 +44,10 @@
     @tailwind components;
     @tailwind utilities;
 ```
+5. Add Following details in plugin property of tailwind config
+```
+    plugins: [require("daisyui"),require("@tailwindcss/line-clamp")],
+```
 ### Adding Plugins and Depandencies
 ```
     npm install @reduxjs/toolkit 
