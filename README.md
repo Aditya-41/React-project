@@ -27,7 +27,7 @@
 
 1. Instal TailWind CSS
 ```
-    npm install -D tailwindcss
+    npm install -D tailwindcss postcss autoprefixer
 ```
 2. Create Tail-Wind Config File
 ```
@@ -35,7 +35,7 @@
 ```
 3. Add File Extention to Tail-Wind Config Files
 ```
-  content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
+  content: ["./index.html"./src/**/*.{html,js,jsx,ts,tsx}"],
 
 ```
 4. Add the Tail-Wind directives at the top of the `Index.css` File
