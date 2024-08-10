@@ -94,7 +94,7 @@ function HomeLayout(props){
                                         <Link to="/login">Login</Link>
                                     </button>
                                     <button className='btn btn-secondary px-4 py-1 font-semibold rounded-md w-1/2'>
-                                        <Link to="/login">Signup</Link>
+                                        <Link to="/signup">Signup</Link>
                                     </button>
                                 </div>
                             </li>
