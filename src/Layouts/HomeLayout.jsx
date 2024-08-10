@@ -5,7 +5,7 @@ import { FiMenu } from 'react-icons/fi';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 
-function HomeLayout({ childern }){
+function HomeLayout(props){
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -54,7 +54,7 @@ function HomeLayout({ childern }){
                     <label htmlFor="my-drawer" className='drawer-overlay'>
 
                     </label>
-                    <ul className='menu p-4 w-48 sm:w-80 bg-base-200 text-base-content relative'>
+                    <ul className='menu p-4 w-48 h-[100%] sm:w-80 bg-base-200 text-base-content relative'>
                         <li className='w-fit absolute right-2 z-50'>
                             <button onClick={hideDrawer}>
                                 <AiFillCloseCircle size={24}/>
@@ -88,12 +88,12 @@ function HomeLayout({ childern }){
                             </Link>
                         </li>
                         {!isLoggedIn && (
-                            <li className='absolute bottom-4 w-[90%'>
+                            <li className='absolute bottom-4 w-[90%]'>
                                 <div className="w-full flex items-center justify-center">
-                                    <button className='btn-primary px-4 py-1 font-semibold rounded-md w-full'>
+                                    <button className='btn btn-primary px-4 py-1 font-semibold rounded-md w-1/2'>
                                         <Link to="/login">Login</Link>
                                     </button>
-                                    <button className='btn-secondary px-4 py-1 font-semibold rounded-md w-full'>
+                                    <button className='btn btn-secondary px-4 py-1 font-semibold rounded-md w-1/2'>
                                         <Link to="/login">Signup</Link>
                                     </button>
                                 </div>
@@ -101,14 +101,14 @@ function HomeLayout({ childern }){
                         )}
 
                         {isLoggedIn && (
-                            <li className='absolute bottom-4 w-[90%'>
+                            <li className='absolute bottom-4 w-[90%]'>
                                 <div className='w-full flex items-center justify-center'>
-                                    <button className='btn-primary px-4 py-1 font-semibold rounded-md w-full'>
+                                    <button className='btn btn-primary px-4 py-1 font-semibold rounded-md w-full'>
                                         <Link to="/user/profile">
                                             Profile
                                         </Link>
                                     </button>
-                                    <button className='btn-secondary px-4 py-1 font-semibold rounded-md w-full'>
+                                    <button className='btn btn-secondary px-4 py-1 font-semibold rounded-md w-full'>
                                         <Link onClick={handleLogout}>
                                             Log-Out
                                         </Link>
@@ -120,7 +120,8 @@ function HomeLayout({ childern }){
                 </div>
             </div>
 
-            { childern }
+            {/* {props.childeren} */}
+            {props.children}
             
             <Footer/>
         </div>

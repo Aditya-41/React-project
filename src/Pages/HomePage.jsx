@@ -3,7 +3,11 @@ import { Link } from 'react-router-dom';
 import HomePageImage from "../Assets/Images/homePageMainImage.png";
 import HomeLayout from '../Layouts/HomeLayout';
 function HomePage() {
-    const element = <div className='pt-10 text-white flex items-center justify-center gap-10 mx-16 h-[90vh]'>
+
+
+    return (
+        <HomeLayout>
+            <div className='pt-10 text-white flex items-center justify-center gap-10 mx-16 h-[90vh]'>
                     <div className='w-1/2 space-y-6'>
                         <h1 className='text-5xl font-semibold'>
                             Find Out Best
@@ -32,9 +36,7 @@ function HomePage() {
                         <img src={HomePageImage} alt="homepage image" />
                     </div>
                 </div>
-
-    return (
-        <HomeLayout childern={element}/>       
+        </HomeLayout>     
     )
 }
 
