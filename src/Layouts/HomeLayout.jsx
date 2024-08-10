@@ -2,9 +2,20 @@ import Footer from '../Components/Footer';
 
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { FiMenu } from 'react-icons/fi';
-import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
 
 function HomeLayout({ childern }){
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    // For Checking is User Logged In
+
+    const isLoggedIn = useSelector((state) => state ?.auth ?.isLoggedIn)
+
+    // For Displaying the Options according to role
+    const role = useSelector((state) => state?.auth?.role);
 
     function changeWidth (){
         const drawerSide = document.getElementsByClassName("drawer-side");
@@ -18,6 +29,14 @@ function HomeLayout({ childern }){
         const drawerSide = document.getElementsByClassName("drawer-side");
         drawerSide[0].style.width = '0';
     }
+
+    function handleLogout (e){
+        e.preventDefault();
+        //const res = await dispatch(logout());
+        //if(res?.payload?.success)
+        navigate("/")
+    }
+
     return(
         <div className="min-h-[90vh]">
             <div className="drawer absolute left-0 z-50 w-fit">
@@ -46,6 +65,13 @@ function HomeLayout({ childern }){
                                 Home
                             </Link>
                         </li>
+                        {isLoggedIn && role === 'ADMIN' && (
+                            <li>
+                                <Link to="/admin/dashboard">
+                                    Admin DashBoard
+                                </Link>
+                            </li>
+                        )}
                         <li>
                             < Link to="/courses">
                                 All Corses
@@ -58,9 +84,38 @@ function HomeLayout({ childern }){
                         </li>
                         <li>
                             < Link to="/about">
-                                Abouit Us
+                                About Us
                             </Link>
                         </li>
+                        {!isLoggedIn && (
+                            <li className='absolute bottom-4 w-[90%'>
+                                <div className="w-full flex items-center justify-center">
+                                    <button className='btn-primary px-4 py-1 font-semibold rounded-md w-full'>
+                                        <Link to="/login">Login</Link>
+                                    </button>
+                                    <button className='btn-secondary px-4 py-1 font-semibold rounded-md w-full'>
+                                        <Link to="/login">Signup</Link>
+                                    </button>
+                                </div>
+                            </li>
+                        )}
+
+                        {isLoggedIn && (
+                            <li className='absolute bottom-4 w-[90%'>
+                                <div className='w-full flex items-center justify-center'>
+                                    <button className='btn-primary px-4 py-1 font-semibold rounded-md w-full'>
+                                        <Link to="/user/profile">
+                                            Profile
+                                        </Link>
+                                    </button>
+                                    <button className='btn-secondary px-4 py-1 font-semibold rounded-md w-full'>
+                                        <Link onClick={handleLogout}>
+                                            Log-Out
+                                        </Link>
+                                    </button>
+                                </div>
+                            </li>    
+                        )}
                     </ul>
                 </div>
             </div>

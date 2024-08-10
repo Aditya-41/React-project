@@ -34,10 +34,7 @@ function HomePage() {
                 </div>
 
     return (
-        <HomeLayout childern={element}/>
-            
-
-       
+        <HomeLayout childern={element}/>       
     )
 }
 
