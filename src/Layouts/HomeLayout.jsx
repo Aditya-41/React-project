@@ -75,7 +75,7 @@ function HomeLayout(props){
                         )}
                         <li>
                             < Link to="/courses">
-                                All Corses
+                                All Courses
                             </Link>
                         </li>
                         <li>
