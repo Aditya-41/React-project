@@ -6,6 +6,7 @@ import './App.css'
 
 import AboutUs from './Pages/AboutUs'
 import Contact from './Pages/Contact'
+import CourseDescription from './Pages/Course/CourseDescription'
 import CourseList from './Pages/Course/CourseList'
 import Denied from './Pages/DeniedPage'
 import HomePage from './Pages/HomePage'
@@ -28,6 +29,7 @@ function App() {
         <Route path='/signup' element={<Signup/>}></Route>
         <Route path='/denied' element={<Denied/>}></Route>
         <Route path='/login' element={<Login/>}></Route>
+        <Route path='/course/description' element={<CourseDescription/>}></Route>
 
         <Route path='*' element={<NotFound/>}></Route>
       </Routes> 
