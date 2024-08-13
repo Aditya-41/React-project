@@ -68,8 +68,8 @@ function HomeLayout(props){
                         </li>
                         {isLoggedIn && role === 'ADMIN' && (
                             <li>
-                                <Link to="/admin/dashboard">
-                                    Admin DashBoard
+                                <Link to="/course/create">
+                                    Create New Course
                                 </Link>
                             </li>
                         )}
