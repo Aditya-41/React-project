@@ -10,7 +10,7 @@ function footer(){
 
                 </section>
                 <section className='flex items-center justify-center gap-5 text-2xl text-white'>
-                    <a className='hover:text-yellow-500 transition-all ease-in-out duration-300'>
+                    <a  className='hover:text-yellow-500 transition-all ease-in-out duration-300'>
                         <BsFacebook/>
                     </a>
                     <a className='hover:text-yellow-500 transition-all ease-in-out duration-300'>
@@ -22,6 +22,7 @@ function footer(){
                     <a className='hover:text-yellow-500 transition-all ease-in-out duration-300'>
                         <BsTwitter/>
                     </a>
+
                 </section>
             </footer>
         </>

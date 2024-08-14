@@ -105,7 +105,7 @@ function HomeLayout(props){
                             <li className="absolute bottom-4 w-[90%]">
                                 <div className="w-full flex items-center justify-center">
                                     <button className='btn btn-primary px-4 py-1 font-semibold rounded-md w-1/2'>
-                                        <Link to="/user/profile">Profile</Link>
+                                        <Link to="/user/profile" >Profile</Link>
                                     </button>
                                     <button className='btn btn-secondary px-4 py-1 font-semibold rounded-md w-1/2'>
                                         <Link onClick={handleLogout}>Logout</Link>

@@ -1,22 +1,24 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import HomeLayout from "../../Layouts/HomeLayout";
 
 import { Link } from "react-router-dom";
+import { getUserData } from "../../Redux/Slices/AuthSlice";
 
 function Profile(){
 
     const dispatch = useDispatch();
     const userData = useSelector((state) => state?.auth?.data);
-
-    console.log(userData);
     
+    
+    console.log(userData);
 
+    
     
     return (
         <HomeLayout>
             <div className="min-h-[90vh] flex items-center justify-center">
-                <div className="my-10 flex flex-col gap-4 rounded-md p-4 text-white  w-100 shadow-[0_0_10px_black]">
+                <div className="my-10 flex flex-col gap-4 rounded-md p-4 text-white  w-96 shadow-[0_0_10px_black]">
                     <img 
                         src={userData?.avatar?.secure_url}
                         alt="" 
@@ -46,7 +48,7 @@ function Profile(){
                             </button>
                         </Link>
                         <Link 
-                            to="/user/edit/profile" 
+                            to="/user/editprofile" 
                             className="w-1/2 bg-yellow-600 hover:bg-yellow-500 transition-all  duration-300 rounded-sm font-semibold py-2 cursor-pointer text-center">
                             <button>
                                 Edit Profile
