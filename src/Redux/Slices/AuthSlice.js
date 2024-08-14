@@ -61,38 +61,62 @@ export const logout = createAsyncThunk("/auth/logout", async () => {
 })
 
 export const updateProfile = createAsyncThunk("/user/update/profile", async (data) => {
-    try{
-        const res = axiosInstance.put(`user/update/${data[0]}`,data[1]);
+    try {
+        const res = axiosInstance.put(`user/update/${data[0]}`, data[1]);
         toast.promise(res, {
-            loading : "Wait! Profile update in Progress ...",
-            success : (data) => {
-                return data ?.data?.message;
+            loading: "Wait! profile update in progress...",
+            success: (data) => {
+                return data?.data?.message;
             },
-            error: "Failed to Update Profile"
-        })
+            error: "Failed to update profile"
+        });
         return (await res).data;
-    }
-    catch(error) {
-        toast.error(error?.responce?.data?.message);
+    } catch(error) {
+        toast.error(error?.response?.data?.message);
     }
 })
+// export const updateProfile = createAsyncThunk("/user/update/profile", async (data) => {
+//     try{
+//         const res = axiosInstance.put(`user/update/${data[0]}`,data[1]);
+//         toast.promise(res, {
+//             loading : "Wait! Profile update in Progress ...",
+//             success : (data) => {
+//                 return data ?.data?.message;
+//             },
+//             error: "Failed to Update Profile"
+//         })
+//         return (await res).data;
+//     }
+//     catch(error) {
+//         toast.error(error?.responce?.data?.message);
+//     }
+// })
 
 export const getUserData = createAsyncThunk("/user/details", async () => {
-    try{
+    try {
         const res = axiosInstance.get("user/me");
-        // toast.promise(res, {
-        //     loading : "Wait! Profile update in Progress ...",
-        //     success : (data) => {
-        //         return data ?.data?.message;
-        //     },
-        //     error: "Failed to Update Profile"
-        // })
         return (await res).data;
-    }
-    catch(error) {
+    } catch(error) {
         toast.error(error.message);
     }
 })
+
+// export const getUserData = createAsyncThunk("/user/details", async () => {
+//     try{
+//         const res = axiosInstance.get("user/me");
+//         // toast.promise(res, {
+//         //     loading : "Wait! Profile update in Progress ...",
+//         //     success : (data) => {
+//         //         return data ?.data?.message;
+//         //     },
+//         //     error: "Failed to Update Profile"
+//         // })
+//         return (await res).data;
+//     }
+//     catch(error) {
+//         toast.error(error.message);
+//     }
+// })
 
 
 
